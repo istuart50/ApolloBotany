@@ -2,12 +2,16 @@ import React from "react";
 import "./CheckoutPage.css";
 import { Container } from "reactstrap";
 import CheckoutForm from "../../components/CheckoutForm";
-
+import Footer from "../../components/Footer/Footer";
 
 const CheckoutPage = (props) => {
-  return <Container>
-    <CheckoutForm/>
-    </Container>;
+  return (
+    <Container>
+      <h1>Checkout Page</h1>
+      <CheckoutForm />
+      <Footer />
+    </Container>
+  );
 };
 
 export default CheckoutPage;
