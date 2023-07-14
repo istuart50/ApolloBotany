@@ -11,13 +11,13 @@ const Footer = () => {
                         <h5>Links</h5>
                         <ul className='list-unstyled'>
                             <li>
-                                <Link to='/'>Home</Link>
+                                <Link to='/'>Plant Search</Link>
                             </li>
                             <li>
-                                <Link to='#'>Products</Link>
+                                <Link to='/products'>Products</Link>
                             </li>
                             <li>
-                                <Link to='#'>Checkout</Link>
+                                <Link to='/checkout'>Checkout</Link>
                             </li>
                         </ul>
                     </Col>

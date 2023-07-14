@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 
 const CheckoutPage = (props) => {
   return <Container>
+    <h1>Checkout Page</h1>
     <Footer />
   </Container>;
 };
