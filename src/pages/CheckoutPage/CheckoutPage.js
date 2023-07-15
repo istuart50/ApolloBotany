@@ -1,7 +1,7 @@
 import React from "react";
 import "./CheckoutPage.css";
 import { Container } from "reactstrap";
-import CheckoutForm from "../../components/CheckoutForm";
+import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import Footer from "../../components/Footer/Footer";
 
 const CheckoutPage = (props) => {
