@@ -6,6 +6,7 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import AppNavbar from './components/AppNavbar/AppNavbar';
 
 
+
 function App() {
   return (
     <div className="App">
