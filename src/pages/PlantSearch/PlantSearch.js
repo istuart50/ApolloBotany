@@ -3,6 +3,7 @@ import './PlantSearch.css';
 import { Container } from "reactstrap";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
+import PlantResults from "../../components/PlantResults/PlantResults";
 
 const PlantSearch = (props) => {
 
@@ -42,6 +43,7 @@ const PlantSearch = (props) => {
             <button onClick={searchPlants}>
                 Search
             </button>
+            <PlantResults results={plantResults} />
             <Footer />
         </Container>
     )
