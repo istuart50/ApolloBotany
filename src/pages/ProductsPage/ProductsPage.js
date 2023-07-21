@@ -3,7 +3,7 @@ import './ProductsPage.css';
 import { Container } from "reactstrap"
 import Footer from "../../components/Footer/Footer";
 import Carousel from "../../components/Carousel/Carousel";
-
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 
 const ProductsPage = () => {
@@ -11,6 +11,7 @@ const ProductsPage = () => {
         <Container>
             <h1>Products Page</h1>
             <Carousel />
+            <ProductCard />
             <Footer />
         </Container>
     )
