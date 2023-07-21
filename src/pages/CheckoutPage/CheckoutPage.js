@@ -9,7 +9,6 @@ const CheckoutPage = (props) => {
     <Container>
       <h1>Checkout Page</h1>
       <CheckoutForm />
-      <Footer />
     </Container>
   );
 };

@@ -1,0 +1,27 @@
+.footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: beige;
+  width: 100%;
+  align-items: center;
+}
+
+.footer-row {
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-links-header {
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProductsPage.css";
-import { Col, Container, Row, Spinner } from "reactstrap";
+import { Container, Row, Spinner } from "reactstrap";
 import Footer from "../../components/Footer/Footer";
 import Carousel from "../../components/Carousel/Carousel";
 import ProductCard from "../../components/ProductCard/ProductCard";
