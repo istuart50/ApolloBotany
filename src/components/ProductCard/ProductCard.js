@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
           <br />
           Water: {product.watering}
         </CardText>
-        <CardText>Cost: ${Math.floor(Math.random() * 50 + 1)}</CardText>
+        <CardText>Price: ${Math.floor(Math.random() * 50 + 1)}</CardText>
         <Button>Button</Button>
       </CardBody>
     </Card>
