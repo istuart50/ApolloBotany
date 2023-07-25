@@ -1,7 +1,11 @@
 .product-details-card-body {
-    display: flex;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.product-details-left-pane {}
+.product-details-left-pane {
+}
 
-.product-details-right-pane {}
+.product-details-right-pane {
+  content: center;
+}
