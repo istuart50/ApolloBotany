@@ -3,11 +3,9 @@ import {
     AccordionHeader,
     AccordionItem,
 } from 'reactstrap';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
-
-const PlantResultItem = ({ result, accordionId }) => {
-
-    console.log(result)
+const PlantResultItem = ({ result, accordionId, detailedResult }) => {
 
 
     return (
@@ -19,9 +17,8 @@ const PlantResultItem = ({ result, accordionId }) => {
                 </h6>
             </AccordionHeader>
             <AccordionBody accordionId={accordionId}>
-                <p>{result.other_name}</p>
-                <p>{result.scientific_name}</p>
-                <p>{result.sunlight}</p>
+
+                <ProductDetails detailedResult={detailedResult} />
             </AccordionBody>
         </AccordionItem>
     )
