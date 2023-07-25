@@ -10,17 +10,17 @@ const AppNavbar = (props) => {
 
     return (
         <div>
-            <Navbar color='dark' light dark expand='md' container='fluid' fixed='top'>
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <Navbar className='navbar' expand='md' container='fluid' fixed='top'>
+                <NavbarBrand href="/">Morgan Treeman Plants</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink href='/products'>Products</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                GitHub
+                            <NavLink href='/checkout'>
+                                Checkout
                             </NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
