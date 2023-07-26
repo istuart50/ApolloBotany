@@ -8,7 +8,7 @@ import {
 } from "reactstrap";
 import "./ProductCard.css";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, clickHandler }) => {
   console.log(product);
 
   return (
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
           Water: {product.watering}
         </CardText>
         <CardText>Price: ${Math.floor(Math.random() * 50 + 1)}</CardText>
-        <Button>Button</Button>
+        <Button onClick={clickHandler}>Button</Button>
       </CardBody>
     </Card>
   );
