@@ -5,9 +5,14 @@ import Footer from "../../components/Footer/Footer";
 import Carousel from "../../components/Carousel/Carousel";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import axios from "axios";
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
 
 const ProductsPage = () => {
   const [plantResults, setPlantResults] = useState([]);
+  const [openedId, setOpenedId] = useState(null)
+  const [detailData, setDetailData] = useState(null)
+
+
   useEffect(() => {
     axios
       .get(
@@ -18,14 +23,39 @@ const ProductsPage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (openedId) {
+      axios
+        .get(
+          `https://perenual.com/api/species/details/${openedId}?key=sk-X1RS64af5155bbf521543`
+        )
+        .then((result) => {
+          console.log("RESULT123", result);
+          setDetailData(result.data);
+        })
+        .catch((error) => {
+          console.error(error);
+          setDetailData(null);
+          setOpenedId(null)
+        });
+    }
+  }, [openedId]);
+
   return (
     <Container>
-      <h1>Products Page</h1>
-      <Carousel />
+      {
+        openedId ? (
+          <ProductDetails detailedResult={detailData} />
+        ) : (
+          <Carousel />
+        )
+      }
       <Row className="product-list">
         {plantResults.length ? (
           plantResults.map((plant, idx) => (
-            <ProductCard product={plant} key={idx} />
+            <ProductCard key={idx} product={plant} clickHandler={() => {
+              setOpenedId(plant.id)
+            }} />
           ))
         ) : (
           <Spinner />
