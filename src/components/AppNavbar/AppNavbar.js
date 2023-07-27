@@ -19,10 +19,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import CartItem from "../CartItem/CartItem";
 
 const AppNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const cartItems = useSelector((state) => state.cart.cartItems)
   const toggle = () => setIsOpen(!isOpen);
 
   return (
@@ -46,31 +48,13 @@ const AppNavbar = (props) => {
               <FontAwesomeIcon icon={faShoppingCart} /> Cart
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem>
-                <div style={{ display: "flex" }}>
-                  <img
-                    height={64}
-                    src="https://picsum.photos/300/200"
-                    alt="product"
-                    style={{ marginRight: "8px" }}
-                  />
-                  <div>
-                    <h5>Product Name</h5>
-                    <div style={{ display: "flex" }}>
-                      <input
-                        style={{ width: "50px" }}
-                        type="number"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                        }}
-                      />
-                      <h6>Price: $50</h6>
-                    </div>
-                  </div>
-                </div>
-              </DropdownItem>
-
+              {
+                cartItems.length ? cartItems.map((item) =>
+                  <CartItem item={item} />
+                ) : (<DropdownItem>
+                  No items in cart.
+                </DropdownItem>)
+              }
               <DropdownItem divider />
               <DropdownItem>
                 <Link to="/checkout">
