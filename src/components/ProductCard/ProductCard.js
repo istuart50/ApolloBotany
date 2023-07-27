@@ -16,7 +16,7 @@ const ProductCard = ({ product, clickHandler }) => {
       <img
         alt="Sample"
         src={
-          product.default_image?.medium_url || "https://picsum.photos/300/200"
+          product.default_image?.medium_url || "https://picsum.photos/300/300"
         }
       />
       <CardBody>
@@ -29,7 +29,7 @@ const ProductCard = ({ product, clickHandler }) => {
           <br />
           Water: {product.watering}
         </CardText>
-        <CardText>Price: ${Math.floor(Math.random() * 50 + 1)}</CardText>
+        <CardText>Price: ${product.price}</CardText>
         <Button onClick={clickHandler}>Button</Button>
       </CardBody>
     </Card>

@@ -82,6 +82,11 @@ const ProductDetails = ({ detailedResult }) => {
           <p>
             <em>{detailedResult.scientific_name}</em>
           </p>
+          {
+            detailedResult?.price && (
+              <h5>${detailedResult.price}</h5>
+            )
+          }
         </div>
         <div className='product-details-right-pane col-sm-3'>
           <h5>Maintenance</h5>
