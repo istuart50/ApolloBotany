@@ -1,72 +1,144 @@
 import { Form, Row, Col, FormGroup, Input, Label, Button } from "reactstrap";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ formValues, formTitle, setFormState, handleCheckboxChange }) => {
+
+  const handleFieldChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setFormState((state) => {
+      return {
+        ...state,
+        [name]: value
+      }
+    })
+
+  }
+
   return (
     <Form>
+      <h3>{formTitle}</h3>
       <Row>
+        {
+          formTitle === 'Billing Form' ? (
+            <Col md={12}>
+              <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input
+                  id="exampleEmail"
+                  name="email"
+                  placeholder="Enter email"
+                  type="email"
+                  value={formValues?.email}
+                  onChange={handleFieldChange}
+                />
+              </FormGroup>
+            </Col>
+          ) : (
+            <Col md={12}>
+              <FormGroup check style={{ margin: '40px 0 22px 0' }}>
+                <Input
+                  id="sameAsBilling"
+                  name="sameAsBilling"
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                />
+                <Label
+                  check
+                  for="sameAsBilling"
+                >
+                  Same as Billing
+                </Label>
+              </FormGroup>
+            </Col>
+          )
+        }
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
+            <Label for="firstName">First Name</Label>
             <Input
-              id="exampleEmail"
-              name="email"
-              placeholder="with a placeholder"
-              type="email"
+              id="firstName"
+              name="firstName"
+              placeholder="Enter first name"
+              type="text"
+              value={formValues?.firstName}
+              onChange={handleFieldChange}
             />
           </FormGroup>
         </Col>
         <Col md={6}>
           <FormGroup>
-            <Label for="examplePassword">Password</Label>
+            <Label for="lastName">Last Name</Label>
             <Input
-              id="examplePassword"
-              name="password"
-              placeholder="password placeholder"
-              type="password"
+              id="lastName"
+              name="lastName"
+              placeholder="Enter last name"
+              type="text"
+              value={formValues?.lastName}
+              onChange={handleFieldChange}
             />
           </FormGroup>
         </Col>
+
       </Row>
       <FormGroup>
-        <Label for="exampleAddress">Address</Label>
-        <Input id="exampleAddress" name="address" placeholder="1234 Main St" />
+        <Label for="address">Address</Label>
+        <Input
+          id="address"
+          name="address"
+          placeholder="1234 Main St"
+          value={formValues?.address}
+          onChange={handleFieldChange}
+        />
       </FormGroup>
       <FormGroup>
-        <Label for="exampleAddress2">Address 2</Label>
+        <Label for="addressDetails">Address 2</Label>
         <Input
-          id="exampleAddress2"
-          name="address2"
+          id="addressDetails"
+          name="addressDetails"
           placeholder="Apartment, studio, or floor"
+          value={formValues?.addressDetails}
+          onChange={handleFieldChange}
         />
       </FormGroup>
       <Row>
         <Col md={6}>
           <FormGroup>
-            <Label for="exampleCity">City</Label>
-            <Input id="exampleCity" name="city" />
+            <Label for="city">City</Label>
+            <Input
+              id="city"
+              name="city"
+              value={formValues?.city}
+              onChange={handleFieldChange}
+            />
           </FormGroup>
         </Col>
         <Col md={4}>
           <FormGroup>
-            <Label for="exampleState">State</Label>
-            <Input id="exampleState" name="state" />
+            <Label for="state">State</Label>
+            <Input
+              id="state"
+              name="state"
+              value={formValues?.state}
+              onChange={handleFieldChange}
+            />
           </FormGroup>
         </Col>
         <Col md={2}>
           <FormGroup>
-            <Label for="exampleZip">Zip</Label>
-            <Input id="exampleZip" name="zip" />
+            <Label for="zip">Zip</Label>
+            <Input
+              id="zip"
+              name="zip"
+              value={formValues?.zip}
+              onChange={handleFieldChange}
+            />
           </FormGroup>
         </Col>
       </Row>
-      <FormGroup check>
-        <Input id="exampleCheck" name="check" type="checkbox" />
-        <Label check for="exampleCheck">
-          Check me out
-        </Label>
-      </FormGroup>
-      <Button>Sign in</Button>
+
     </Form>
+
   );
 };
 
