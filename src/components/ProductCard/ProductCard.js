@@ -8,7 +8,7 @@ import {
 } from "reactstrap";
 import "./ProductCard.css";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, clickHandler }) => {
   console.log(product);
 
   return (
@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
       <img
         alt="Sample"
         src={
-          product.default_image?.medium_url || "https://picsum.photos/300/200"
+          product.default_image?.medium_url || "https://picsum.photos/300/300"
         }
       />
       <CardBody>
@@ -29,8 +29,8 @@ const ProductCard = ({ product }) => {
           <br />
           Water: {product.watering}
         </CardText>
-        <CardText>Cost: ${Math.floor(Math.random() * 50 + 1)}</CardText>
-        <Button>Button</Button>
+        <CardText>Price: ${product.price}</CardText>
+        <Button onClick={clickHandler}>Button</Button>
       </CardBody>
     </Card>
   );

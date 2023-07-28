@@ -1,7 +1,21 @@
 .product-details-card-body {
-    display: flex;
+  /* display: flex;
+  justify-content: space-evenly; */
+  text-align: center;
+  padding: 16px;
+  justify-content: center;
 }
 
-.product-details-left-pane {}
+/* .product-details-left-pane {} */
 
-.product-details-right-pane {}
+.product-details-left-pane {
+  text-align: left;
+}
+
+.product-details-center-pane {}
+
+/* .product-details-right-pane {} */
+
+.product-details-right-pane {
+  text-align: left;
+}
