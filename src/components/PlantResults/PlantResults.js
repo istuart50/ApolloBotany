@@ -34,22 +34,26 @@ function PlantResults({ results }) {
   };
 
   return (
-    <div>
-      <Accordion flush open={openedId} toggle={toggle}>
-        {results.length ? (
-          results.map((result, idx) => (
-            <PlantResultItem
-              result={result}
-              accordionId={result.id}
-              key={idx}
-              detailedResult={openedDetails}
-            />
-          ))
-        ) : (
-          <Spinner />
-        )}
-      </Accordion>
-    </div>
+    <>
+      {results.length ? (
+        <Accordion flush open={openedId} toggle={toggle}>
+          {
+            results.map((result, idx) => (
+              <PlantResultItem
+                result={result}
+                accordionId={result.id}
+                key={idx}
+                detailedResult={openedDetails}
+              />
+            ))
+          }
+        </Accordion>
+      ) : (
+        <div className='plant-results-spinner'>
+          <Spinner color='info' style={{ height: '5rem', width: '5rem' }} />
+        </div>
+      )}
+    </>
   );
 }
 

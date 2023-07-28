@@ -2,5 +2,5 @@
   height: calc(100vh - (56px + 110px));
   margin-top: 56px;
   overflow-y: auto;
-  padding: 24px;
+  padding: 16px;
 }

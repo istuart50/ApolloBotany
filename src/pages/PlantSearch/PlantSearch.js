@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PlantSearch.css";
-import { Container } from "reactstrap";
+import { Button, Container, Input, InputGroup, InputGroupText } from "reactstrap";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 import PlantResults from "../../components/PlantResults/PlantResults";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const PlantSearch = (props) => {
   const [searchValue, setSearchValue] = useState("");
   const [skipAPICall, setSkipAPICall] = useState(false);
   const [plantResults, setPlantResults] = useState([]);
 
-  const searchPlants = () => {
+  useEffect(() => {
+    searchPlants('tree')
+  }, [])
+
+
+  const searchPlants = (searchTerm) => {
     axios
       .get(
-        `https://perenual.com/api/species-list?page=1&key=sk-X1RS64af5155bbf521543&q=${searchValue}`
+        `https://perenual.com/api/species-list?page=1&key=sk-X1RS64af5155bbf521543&q=${searchTerm}`
       )
       .then((result) => {
         setPlantResults(result.data.data);
@@ -25,11 +32,11 @@ const PlantSearch = (props) => {
     const inputValue = e.target.value;
     setSearchValue(inputValue);
 
-    if (inputValue.length > 3) {
+    if (inputValue.length >= 3) {
       if (skipAPICall) {
         return;
       }
-      searchPlants();
+      searchPlants(searchValue);
 
       setSkipAPICall(true);
       setTimeout(() => {
@@ -39,11 +46,18 @@ const PlantSearch = (props) => {
   };
 
   return (
-    <Container>
-      <h1>Plant Search Page</h1>
-      <input value={searchValue} onChange={handleThrottledSearchInputChange} />
-      <button onClick={searchPlants}>Search</button>
-      <PlantResults results={plantResults} />
+    <Container className='plant-search-container'>
+      <div className='plant-search-input-row'>
+        <InputGroup>
+          <Input value={searchValue} onChange={handleThrottledSearchInputChange} placeholder='Search Plant Database' />
+          <Button className='plant-search-button'>
+            <FontAwesomeIcon icon={faSearch} />
+          </Button>
+        </InputGroup>
+      </div>
+      <div className='plant-search-results-row'>
+        <PlantResults results={plantResults} />
+      </div>
       <Footer />
     </Container>
   );

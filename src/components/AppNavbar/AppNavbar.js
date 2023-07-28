@@ -9,7 +9,6 @@ import {
   NavLink,
   Navbar,
   NavbarBrand,
-  NavbarText,
   NavbarToggler,
   UncontrolledDropdown,
 } from "reactstrap";
@@ -29,16 +28,21 @@ const AppNavbar = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" light dark expand="md" container="fluid" fixed="top">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <Navbar className='navbar' expand='md' container='fluid' fixed='top'>
+        <NavbarBrand className='app-navbar-text' href="/">Morgan Treeman Plants</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink className='app-navbar-text' href="/products">Products</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/istuart50/apollo-botany">
+              <NavLink className='app-navbar-text' href="/checkout">
+                Checkout
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className='app-navbar-text' href="https://github.com/istuart50/apollo-botany" target="_blank">
                 GitHub
               </NavLink>
             </NavItem>
