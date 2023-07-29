@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import background from "./images/image06.png";
 
 function App() {
+
   return (
     <div className="App">
       <AppNavbar />

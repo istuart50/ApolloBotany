@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./ProductsPage.css";
 import { Container, Row, Spinner } from "reactstrap";
-import Footer from "../../components/Footer/Footer";
-// import Carousel from "../../components/Carousel/Carousel";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import axios from "axios";
-import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import ProductModal from "../../components/ProductModal/ProductModal";
 
 const ProductsPage = () => {
@@ -25,6 +22,7 @@ const ProductsPage = () => {
           plant.price = Math.floor(Math.random() * 50 + 1);
           return plant;
         });
+        dataWithPrices.splice(dataWithPrices.length - 2, 2)
         setPlantResults(dataWithPrices);
       });
   }, []);

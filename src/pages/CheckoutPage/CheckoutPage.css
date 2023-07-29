@@ -1,19 +1,24 @@
+.checkout-page-card {
+    background-color: #d3d3c1 !important;
+    margin-top: 32px;
+    box-shadow: 10px 5px 5px grey;
+
+}
+
 .checkout-page-form-container {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .checkout-page-payment-button-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .checkout-page-payment-button {
-  text-align: end;
-  background-color: darkslategray;
+    background-color: darkslategray;
 }
 
-.checkout-page-card {
-  /* padding: 16px !important; */
-  background-color: #d3d3c1 !important;
+.checkout-page-payment-button:hover {
+    background-color: rgb(62, 102, 102);
 }

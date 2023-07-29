@@ -20,17 +20,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import CartItem from "../CartItem/CartItem";
+import navLogo from "../../images/navbarimg.png"
 
 const AppNavbar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const [isOpen, setIsOpen] = useState(false);
+  console.log('cart', cartItems)
   const toggle = () => setIsOpen(!isOpen);
+  const getTotal = () => {
+    const total = cartItems.reduce((curTotal, item) => {
+      const itemTotal = item.qty * item.price;
+      curTotal = curTotal + itemTotal
+      return curTotal;
+    }, 0)
+    return total;
+  }
 
   return (
     <div>
       <Navbar className="app-navbar" expand="md" container="fluid" fixed="top">
         <NavbarBrand className="app-navbar-text" href="/">
-          Morgan Treeman Plants
+          <img src={navLogo} alt="Morgan Freeman" height={48} />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -61,7 +71,7 @@ const AppNavbar = (props) => {
             </NavItem>
           </Nav>
           <UncontrolledDropdown style={{ marginRight: "64px" }}>
-            <DropdownToggle nav caret style={{ color: "white" }}>
+            <DropdownToggle nav caret className="app-navbar-text">
               <FontAwesomeIcon icon={faShoppingCart} /> Cart
             </DropdownToggle>
             <DropdownMenu right>
@@ -72,14 +82,19 @@ const AppNavbar = (props) => {
               )}
               <DropdownItem divider />
               <DropdownItem>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>
+                    Total:
+                  </span>
+                  <span style={{ fontWeight: '600' }}>
+                    ${getTotal()}
+                  </span>
+                </div>
+              </DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>
                 <Link to="/checkout">
-                  <Button
-                    style={{
-                      backgroundColor: "darkslategray",
-                      color: "white",
-                      width: "100%",
-                    }}
-                  >
+                  <Button className="app-navbar-checkout-button">
                     Checkout
                   </Button>
                 </Link>

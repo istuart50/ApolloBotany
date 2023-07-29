@@ -21,10 +21,14 @@ const cartSlice = createSlice({
     changeItemQty: (state, action) => {
       const foundIndex = state.cartItems.findIndex((item) => item.id === action.payload.id)
       if (foundIndex !== -1) {
-        state.cartItems.splice(foundIndex, 1, {
-          ...state.cartItems[foundIndex],
-          qty: parseInt(action.payload.qty)
-        })
+        if (parseInt(action.payload.qty) < 1) {
+          state.cartItems.splice(foundIndex, 1)
+        } else {
+          state.cartItems.splice(foundIndex, 1, {
+            ...state.cartItems[foundIndex],
+            qty: parseInt(action.payload.qty)
+          })
+        }
       }
     }
 

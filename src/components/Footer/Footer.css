@@ -19,31 +19,20 @@
 }
 
 .footer-links {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
+  justify-content: center;
+  max-width: fit-content;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .footer-link {
   text-decoration: none;
-}
-
-.footer-link {
-  color: #fff;
-}
-
-a:hover.btn-social-icon {
-  color: #94368c;
-}
-
-.btn {
   color: white;
+  margin-right: 4px;
 }
 
-a:hover {
-  color: #d3d3c1;
-}
-
-a:hover.btn-link {
-  color: #d3d3c1;
+.footer-link:hover {
+  color: white;
+  font-weight: 700;
 }

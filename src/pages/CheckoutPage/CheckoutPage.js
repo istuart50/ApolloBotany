@@ -66,7 +66,7 @@ const CheckoutPage = (props) => {
   const submit = () => {
     toggleModal();
     alert(
-      "Credit card info sent to Dark Web. The shadow goverment thanks you for your contribution"
+      "Credit card info has been sent to the Dark Web. The shadow goverment thanks you for your contribution >;)"
     );
   };
 
@@ -144,7 +144,7 @@ const CheckoutPage = (props) => {
           </Container>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={submit}>
+          <Button style={{ color: 'white', backgroundColor: 'darkslategray' }} onClick={submit}>
             Submit
           </Button>{" "}
           <Button color="secondary" onClick={toggleModal}>
