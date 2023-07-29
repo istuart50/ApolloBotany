@@ -1,6 +1,6 @@
 .view-container {
-  height: calc(100vh - (40px + 110px));
-  margin-top: 56px;
+  height: calc(100vh - (58px + 110px));
+  margin-top: 74px;
   overflow-y: auto;
   background-position: center;
   background-size: contain;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faInstagram,
   faInstagramSquare,
   faSquareFacebook,
   faTwitterSquare,
@@ -19,59 +18,58 @@ const Footer = () => {
         <Row className="footer-row">
           <Col className="footer-links-header">
             <h5>Our Site</h5>
-            <ul className="footer-links">
-              <li>
-                <Link to="/" className="footer-link">
-                  Plant Search
-                </Link>
-              </li>
-              <li>
+            <Row className="footer-links">
+              <Col sm={12} md={4}>
                 <Link to="/products" className="footer-link">
                   Products
                 </Link>
-              </li>
-              <li>
+              </Col>
+              <Col sm={12} md={5}>
+                <Link to="/" className="footer-link">
+                  Plant Search
+                </Link>
+              </Col>
+              <Col sm={12} md={3}>
                 <Link to="/checkout" className="footer-link">
                   Checkout
                 </Link>
-              </li>
-            </ul>
+              </Col>
+            </Row>
           </Col>
           <Col className="text-center">
             <h5>Social</h5>
             <a
-              className="btn btn-social-icon btn-instagram"
+              className="footer-link"
               href="http://instagram.com/"
             >
-              <FontAwesomeIcon size="2xl" icon={faInstagramSquare} />
+              <FontAwesomeIcon className="fa-3x" icon={faInstagramSquare} />
             </a>{" "}
             <a
-              className="btn btn-social-icon btn-facebook"
+              className="footer-link"
               href="http://www.facebook.com/"
             >
-              <FontAwesomeIcon size="2xl" icon={faSquareFacebook} />
+              <FontAwesomeIcon className="fa-3x" icon={faSquareFacebook} />
             </a>{" "}
             <a
-              className="btn btn-social-icon btn-twitter"
+              className="footer-link"
               href="http://twitter.com/"
             >
-              <FontAwesomeIcon size="2xl" icon={faTwitterSquare} />
+              <FontAwesomeIcon className="fa-3x" icon={faTwitterSquare} />
             </a>{" "}
             <a
-              className="btn btn-social-icon btn-google"
+              className="footer-link"
               href="http://youtube.com/"
             >
-              <FontAwesomeIcon size="2xl" icon={faYoutubeSquare} />
+              <FontAwesomeIcon className="fa-3x" icon={faYoutubeSquare} />
             </a>
           </Col>
           <Col className="text-center">
-            <a role="button" className="btn btn-link" href="tel:+18004273367">
+            <h5>Contact Us</h5>
+            <a className="footer-link" href="tel:+18004273367">
               <FontAwesomeIcon icon={faPhone} /> 1-800-gardens
             </a>
             <br />
-            <a
-              role="button"
-              className="btn btn-link"
+            <a className="footer-link"
               href="mailto:ilikeplants@gmail.com"
             >
               <FontAwesomeIcon icon={faEnvelope} /> ilikeplants@gmail.com

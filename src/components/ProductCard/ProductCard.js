@@ -19,7 +19,7 @@ const ProductCard = ({ product, clickHandler }) => {
           product.default_image?.medium_url || "https://picsum.photos/300/300"
         }
       />
-      <CardBody>
+      <CardBody style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <CardTitle tag="h5">{product.common_name}</CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           <em>{product.scientific_name}</em>

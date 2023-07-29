@@ -6,3 +6,18 @@
 .app-navbar-text {
   color: white;
 }
+
+.app-navbar-text:hover {
+  color: white;
+  font-weight: 700;
+}
+
+.app-navbar-checkout-button {
+  background-color: darkslategray;
+  color: white;
+  width: 100%;
+}
+
+.app-navbar-checkout-button:hover {
+  background-color: rgb(62, 102, 102);
+}

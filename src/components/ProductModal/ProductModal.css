@@ -10,3 +10,7 @@
   background-color: darkslategray;
   color: white;
 }
+
+.product-modal-button:hover {
+  background-color: rgb(62, 102, 102);
+}

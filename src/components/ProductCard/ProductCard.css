@@ -15,3 +15,7 @@
   /* border: 0.5px solid #ece8e6; */
   width: 100%;
 }
+
+.product-card-button:hover {
+  background-color: rgb(62, 102, 102);
+}

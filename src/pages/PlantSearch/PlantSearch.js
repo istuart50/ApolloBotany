@@ -6,14 +6,13 @@ import {
   Container,
   Input,
   InputGroup,
-  InputGroupText,
   Row,
 } from "reactstrap";
-import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 import PlantResults from "../../components/PlantResults/PlantResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import searchLogo from "../../images/searchpglogo.png"
 
 const PlantSearch = (props) => {
   const [searchValue, setSearchValue] = useState("");
@@ -53,23 +52,32 @@ const PlantSearch = (props) => {
   };
 
   return (
-    <Container>
-      <Row className="plant-search-input-row">
-        <Col md={12}>
-          <InputGroup>
-            <Input
-              value={searchValue}
-              onChange={handleThrottledSearchInputChange}
-              placeholder="Search Plant Database"
-            />
-            <Button className="plant-search-button">
-              <FontAwesomeIcon icon={faSearch} />
-            </Button>
-          </InputGroup>
-        </Col>
-      </Row>
-      <PlantResults results={plantResults} />
-    </Container>
+    <>
+      <Container>
+        <Row className="plant-search-input-row">
+          <Col md={12}>
+            <img src={searchLogo} alt="Morgan Treeman" />
+          </Col>
+          <hr />
+          <Col md={12}>
+            <InputGroup>
+              <Input
+                value={searchValue}
+                onChange={handleThrottledSearchInputChange}
+                placeholder="Search Plant Database"
+              />
+              <Button className="plant-search-button">
+                <FontAwesomeIcon icon={faSearch} />
+              </Button>
+            </InputGroup>
+          </Col>
+        </Row>
+        <Row className="plant-search-results-row">
+          <PlantResults results={plantResults} />
+        </Row>
+      </Container>
+
+    </>
   );
 };
 
