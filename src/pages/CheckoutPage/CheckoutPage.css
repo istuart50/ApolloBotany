@@ -1,12 +1,19 @@
 .checkout-page-form-container {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .checkout-page-payment-button-row {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkout-page-payment-button {
-    text-align: end;
+  text-align: end;
+  background-color: darkslategray;
+}
+
+.checkout-page-card {
+  /* padding: 16px !important; */
+  background-color: #d3d3c1 !important;
 }

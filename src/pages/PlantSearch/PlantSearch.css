@@ -1,24 +1,22 @@
-.plant-search-container {
-    background-color: #1E9987;
-    padding: 8px;
-    border-radius: 5px;
-}
-
 .plant-search-input-row {
-    text-align: center;
-    color: whitesmoke;
-    max-width: 30%;
-    margin: auto;
-    margin-bottom: 8px;
+  text-align: center;
+  color: whitesmoke;
+  margin: 0;
+  width: 100%;
+  padding: 16px;
+  background-color: darkslategrey;
+
+  /* position: absolute; */
+  z-index: 10;
+  position: sticky;
 }
 
 .plant-search-results-row {
-    overflow-y: auto;
-    height: calc(100vh - 300px);
-    border-radius: 5px;
+  /* height: calc(100vh - 300px); */
+  /* border-radius: 5px; */
 }
 
-.plant-search-results-row::-webkit-scrollbar {
+/* .plant-search-results-row::-webkit-scrollbar {
     width: 16px;
 }
 
@@ -30,8 +28,8 @@
 .plant-search-results-row::-webkit-scrollbar-thumb {
     background: #634791;
     border-radius: 10px;
-}
+} */
 
 .plant-search-button {
-    background-color: #FF0084;
+  background-color: #94368c;
 }

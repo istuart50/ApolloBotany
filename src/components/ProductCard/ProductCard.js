@@ -30,7 +30,9 @@ const ProductCard = ({ product, clickHandler }) => {
           Water: {product.watering}
         </CardText>
         <CardText>Price: ${product.price}</CardText>
-        <Button onClick={clickHandler}>Button</Button>
+        <Button onClick={clickHandler} className="product-card-button">
+          Details
+        </Button>
       </CardBody>
     </Card>
   );

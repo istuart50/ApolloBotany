@@ -1,7 +1,8 @@
-.navbar {
-    background-color: #634791;
+.app-navbar {
+  background-color: #94368c;
+  color: white;
 }
 
 .app-navbar-text {
-    color: white;
+  color: white;
 }
