@@ -36,21 +36,24 @@ function PlantResults({ results }) {
   return (
     <>
       {results.length ? (
-        <Accordion flush open={openedId} toggle={toggle}>
-          {
-            results.map((result, idx) => (
-              <PlantResultItem
-                result={result}
-                accordionId={result.id}
-                key={idx}
-                detailedResult={openedDetails}
-              />
-            ))
-          }
+        <Accordion
+          flush
+          open={openedId}
+          toggle={toggle}
+          className="plant-results-accordian"
+        >
+          {results.map((result, idx) => (
+            <PlantResultItem
+              result={result}
+              accordionId={result.id}
+              key={idx}
+              detailedResult={openedDetails}
+            />
+          ))}
         </Accordion>
       ) : (
-        <div className='plant-results-spinner'>
-          <Spinner color='info' style={{ height: '5rem', width: '5rem' }} />
+        <div className="plant-results-spinner">
+          <Spinner color="info" style={{ height: "5rem", width: "5rem" }} />
         </div>
       )}
     </>

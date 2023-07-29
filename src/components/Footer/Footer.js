@@ -14,11 +14,11 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="app-footer">
       <Container>
         <Row className="footer-row">
           <Col className="footer-links-header">
-            <h5>Links</h5>
+            <h5>Our Site</h5>
             <ul className="footer-links">
               <li>
                 <Link to="/" className="footer-link">

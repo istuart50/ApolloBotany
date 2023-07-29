@@ -12,10 +12,15 @@
   text-align: left;
 }
 
-.product-details-center-pane {}
+.product-details-center-pane {
+}
 
 /* .product-details-right-pane {} */
 
 .product-details-right-pane {
   text-align: left;
+}
+
+.product-details-label {
+  font-weight: 500;
 }

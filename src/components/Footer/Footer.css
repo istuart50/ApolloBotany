@@ -1,15 +1,21 @@
-.footer {
+.app-footer {
   position: absolute;
   bottom: 0px;
-  background-color: beige;
+  background-color: #485323;
   width: 100%;
+  /* height: 11%; */
   align-items: center;
+  color: white;
 }
 
 .footer-row {
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: 8px;
+}
+
+.footer-links-header {
+  text-align: center;
 }
 
 .footer-links {
@@ -22,6 +28,22 @@
   text-decoration: none;
 }
 
-.footer-links-header {
-  text-align: center;
+.footer-link {
+  color: #fff;
+}
+
+a:hover.btn-social-icon {
+  color: #94368c;
+}
+
+.btn {
+  color: white;
+}
+
+a:hover {
+  color: #d3d3c1;
+}
+
+a:hover.btn-link {
+  color: #d3d3c1;
 }

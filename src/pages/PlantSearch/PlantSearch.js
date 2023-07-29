@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./PlantSearch.css";
-import { Button, Container, Input, InputGroup, InputGroupText } from "reactstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Input,
+  InputGroup,
+  InputGroupText,
+  Row,
+} from "reactstrap";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 import PlantResults from "../../components/PlantResults/PlantResults";
@@ -13,9 +21,8 @@ const PlantSearch = (props) => {
   const [plantResults, setPlantResults] = useState([]);
 
   useEffect(() => {
-    searchPlants('tree')
-  }, [])
-
+    searchPlants("tree");
+  }, []);
 
   const searchPlants = (searchTerm) => {
     axios
@@ -46,19 +53,22 @@ const PlantSearch = (props) => {
   };
 
   return (
-    <Container className='plant-search-container'>
-      <div className='plant-search-input-row'>
-        <InputGroup>
-          <Input value={searchValue} onChange={handleThrottledSearchInputChange} placeholder='Search Plant Database' />
-          <Button className='plant-search-button'>
-            <FontAwesomeIcon icon={faSearch} />
-          </Button>
-        </InputGroup>
-      </div>
-      <div className='plant-search-results-row'>
-        <PlantResults results={plantResults} />
-      </div>
-      <Footer />
+    <Container>
+      <Row className="plant-search-input-row">
+        <Col md={12}>
+          <InputGroup>
+            <Input
+              value={searchValue}
+              onChange={handleThrottledSearchInputChange}
+              placeholder="Search Plant Database"
+            />
+            <Button className="plant-search-button">
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
+          </InputGroup>
+        </Col>
+      </Row>
+      <PlantResults results={plantResults} />
     </Container>
   );
 };

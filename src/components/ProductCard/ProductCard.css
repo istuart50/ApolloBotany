@@ -1,6 +1,17 @@
 .product-card {
   width: 18rem !important;
   padding: 0 !important;
-  /* background-color: lightblue !important; */
+  border: white;
   margin-top: 8px !important;
+  background-color: #d3d3c1;
+  color: black;
+  box-shadow: 10px 5px 5px grey;
+  /* box-shadow: 10px 5px 5px rgb(47, 79, 72); */
+}
+
+.product-card-button {
+  background-color: darkslategray;
+  color: white;
+  /* border: 0.5px solid #ece8e6; */
+  width: 100%;
 }

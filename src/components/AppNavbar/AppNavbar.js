@@ -23,26 +23,39 @@ import CartItem from "../CartItem/CartItem";
 
 const AppNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const cartItems = useSelector((state) => state.cart.cartItems)
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
-      <Navbar className='navbar' expand='md' container='fluid' fixed='top'>
-        <NavbarBrand className='app-navbar-text' href="/">Morgan Treeman Plants</NavbarBrand>
+      <Navbar className="app-navbar" expand="md" container="fluid" fixed="top">
+        <NavbarBrand className="app-navbar-text" href="/">
+          Morgan Treeman Plants
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink className='app-navbar-text' href="/products">Products</NavLink>
+              <NavLink className="app-navbar-text" href="/">
+                Plant Search
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='app-navbar-text' href="/checkout">
+              <NavLink className="app-navbar-text" href="/products">
+                Products
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className="app-navbar-text" href="/checkout">
                 Checkout
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className='app-navbar-text' href="https://github.com/istuart50/apollo-botany" target="_blank">
+              <NavLink
+                className="app-navbar-text"
+                href="https://github.com/istuart50/apollo-botany"
+                target="_blank"
+              >
                 GitHub
               </NavLink>
             </NavItem>
@@ -52,17 +65,23 @@ const AppNavbar = (props) => {
               <FontAwesomeIcon icon={faShoppingCart} /> Cart
             </DropdownToggle>
             <DropdownMenu right>
-              {
-                cartItems.length ? cartItems.map((item) =>
-                  <CartItem item={item} />
-                ) : (<DropdownItem>
-                  No items in cart.
-                </DropdownItem>)
-              }
+              {cartItems.length ? (
+                cartItems.map((item) => <CartItem item={item} />)
+              ) : (
+                <DropdownItem>No items in cart.</DropdownItem>
+              )}
               <DropdownItem divider />
               <DropdownItem>
                 <Link to="/checkout">
-                  <Button>Checkout</Button>
+                  <Button
+                    style={{
+                      backgroundColor: "darkslategray",
+                      color: "white",
+                      width: "100%",
+                    }}
+                  >
+                    Checkout
+                  </Button>
                 </Link>
               </DropdownItem>
             </DropdownMenu>
